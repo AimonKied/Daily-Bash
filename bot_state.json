@@ -1,6 +1,7 @@
 {
-  "last_post_date": "2025-12-25T02:12:44.132415",
+  "last_post_date": "2025-12-27T10:23:53.091284",
   "used_tips": [
-    "\ud83d\udca1 Use 'man command' to read the manual for any command"
+    "\ud83d\udca1 Use 'man command' to read the manual for any command",
+    "\ufffd Forgot sudo? Type 'sudo !!' to re-run your last command with sudo privileges. Game changer!"
   ]
 }
