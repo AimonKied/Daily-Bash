@@ -1,0 +1,144 @@
+#!/usr/bin/env python3
+"""
+X Bot for posting bash shell tips every second day
+"""
+
+import tweepy
+import json
+import os
+from datetime import datetime, timedelta
+import random
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+
+class BashTipBot:
+    def __init__(self):
+        # Load API credentials from environment variables
+        self.api_key = os.getenv('X_API_KEY')
+        self.api_secret = os.getenv('X_API_SECRET')
+        self.access_token = os.getenv('X_ACCESS_TOKEN')
+        self.access_token_secret = os.getenv('X_ACCESS_TOKEN_SECRET')
+        self.bearer_token = os.getenv('X_BEARER_TOKEN')
+        
+        if not all([self.api_key, self.api_secret, self.access_token, 
+                    self.access_token_secret, self.bearer_token]):
+            raise ValueError("Missing API credentials. Please set environment variables.")
+        
+        # Initialize Tweepy client
+        self.client = tweepy.Client(
+            bearer_token=self.bearer_token,
+            consumer_key=self.api_key,
+            consumer_secret=self.api_secret,
+            access_token=self.access_token,
+            access_token_secret=self.access_token_secret
+        )
+        
+        self.state_file = 'bot_state.json'
+        self.tips_file = 'tips.txt'
+        
+        # Load tips from file
+        self.bash_tips = self.load_tips()
+    
+    def load_tips(self):
+        """Load tips from the tips file"""
+        if not os.path.exists(self.tips_file):
+            raise FileNotFoundError(f"Tips file '{self.tips_file}' not found!")
+        
+        with open(self.tips_file, 'r', encoding='utf-8') as f:
+            # Read non-empty lines, strip whitespace
+            tips = [line.strip() for line in f if line.strip()]
+        
+        if not tips:
+            raise ValueError(f"Tips file '{self.tips_file}' is empty!")
+        
+        return tips
+    
+    def load_state(self):
+        """Load the bot's state from file"""
+        if os.path.exists(self.state_file):
+            with open(self.state_file, 'r') as f:
+                return json.load(f)
+        return {
+            'last_post_date': None,
+            'used_tips': []
+        }
+    
+    def save_state(self, state):
+        """Save the bot's state to file"""
+        with open(self.state_file, 'w') as f:
+            json.dump(state, f, indent=2)
+    
+    def should_post(self, state):
+        """Check if it's time to post (every second day)"""
+        if state['last_post_date'] is None:
+            return True
+        
+        last_post = datetime.fromisoformat(state['last_post_date'])
+        now = datetime.now()
+        days_since_last_post = (now - last_post).days
+        
+        return days_since_last_post >= 2
+    
+    def get_next_tip(self, state):
+        """Get the next tip in order that hasn't been used"""
+        # Reset used tips if we've used them all
+        if len(state['used_tips']) >= len(self.bash_tips):
+            state['used_tips'] = []
+        
+        # Get the first unused tip (maintains order from tips.txt)
+        for tip in self.bash_tips:
+            if tip not in state['used_tips']:
+                state['used_tips'].append(tip)
+                return tip
+        
+        # Fallback (shouldn't happen due to reset above)
+        return self.bash_tips[0]
+    
+    def post_tip(self):
+        """Post a bash tip if it's time"""
+        state = self.load_state()
+        
+        if not self.should_post(state):
+            print("Not time to post yet. Waiting for the next scheduled day.")
+            last_post = datetime.fromisoformat(state['last_post_date'])
+            next_post = last_post + timedelta(days=2)
+            print(f"Next post scheduled for: {next_post.strftime('%Y-%m-%d %H:%M:%S')}")
+            return
+        
+        # Get the next tip in order
+        tip = self.get_next_tip(state)
+        
+        # Post to X
+        try:
+            response = self.client.create_tweet(text=tip)
+            print(f"✅ Successfully posted: {tip}")
+            print(f"Tweet ID: {response.data['id']}")
+            
+            # Update state
+            state['last_post_date'] = datetime.now().isoformat()
+            self.save_state(state)
+            
+        except Exception as e:
+            print(f"❌ Error posting tweet: {e}")
+    
+    def run(self):
+        """Main run method"""
+        print("🤖 Bash Tip Bot Starting...")
+        self.post_tip()
+
+
+def main():
+    try:
+        bot = BashTipBot()
+        bot.run()
+    except Exception as e:
+        print(f"Error: {e}")
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    exit(main())

@@ -1,0 +1,193 @@
+� Forgot sudo? Type 'sudo !!' to re-run your last command with sudo privileges. Game changer!
+
+💡 Press Ctrl+R to search your command history interactively. Start typing and watch the magic happen.
+
+⚡ Use 'cd -' to jump back to your previous directory instantly. No more retyping long paths!
+
+🎯 'Ctrl+A' jumps to the start of a line, 'Ctrl+E' to the end. Your fingers will thank you.
+
+🔥 Made a typo? 'Ctrl+U' clears everything before the cursor. 'Ctrl+K' clears after.
+
+💪 'mkdir -p dir1/dir2/dir3' creates nested directories in one shot. No need for multiple commands.
+
+🎨 'ls -lth' shows files sorted by time (newest first). Add 'head' to see just the latest: ls -lth | head
+
+⏱️ Use 'time {command}' to see exactly how long any command takes. Great for optimization!
+
+🔍 'grep -r "text" .' searches ALL files in current directory recursively. Add '-i' for case-insensitive.
+
+📊 'du -sh *' shows the size of each item in the current directory. Find those space hogs!
+
+🎯 'find . -name "*.log" -mtime +30 -delete' finds and deletes log files older than 30 days.
+
+🚀 'tail -f file.log' watches a file in real-time. Perfect for monitoring logs as they update.
+
+💡 Create an alias: alias gs="git status" in ~/.bashrc and never type the full command again.
+
+⚡ 'history | awk '{print $2}' | sort | uniq -c | sort -rn | head' shows your most-used commands.
+
+🔥 '!$' refers to the last argument of the previous command. Try: mkdir test && cd !$
+
+🎯 'Ctrl+L' clears the screen (same as 'clear' but faster). Keep your terminal tidy!
+
+💪 'df -h' shows disk space in human-readable format. Know when you're running out of space.
+
+🎨 'ps aux | grep process_name' finds running processes. Add '| grep -v grep' to exclude the grep itself.
+
+⏱️ Use '&' at the end to run commands in background: npm run build &
+
+🔍 'which python' shows the full path of a command. Use 'type -a python' to see ALL versions.
+
+💡 'chmod +x script.sh' makes a file executable. Now you can run it with './script.sh'
+
+🚀 'curl wttr.in' gives you the weather forecast in your terminal. Add your city: curl wttr.in/Berlin
+
+⚡ 'cat file.txt | tee output.txt' displays AND saves output simultaneously.
+
+🔥 'xargs' is powerful: find . -name "*.tmp" | xargs rm removes all .tmp files found.
+
+🎯 'rsync -av --progress source/ dest/' syncs directories with a progress bar. Better than cp!
+
+💪 'diff <(ls dir1) <(ls dir2)' compares directory contents using process substitution.
+
+🎨 'watch -n 1 "command"' runs a command every second. Great for monitoring changes.
+
+⏱️ 'nohup command &' runs a process that survives logout. Output goes to nohup.out
+
+🔍 '!!:s/old/new' replaces text in your last command. Faster than retyping everything!
+
+💡 'pushd /path' saves current dir and moves there. 'popd' returns. Build a directory stack!
+
+🚀 'Ctrl+Z' pauses a process, 'bg' resumes it in background, 'fg' brings it to foreground.
+
+⚡ 'echo "text" | xclip -selection clipboard' copies text to clipboard (install xclip first).
+
+🔥 'grep -A 5 -B 5 "pattern" file' shows 5 lines before AND after each match. Context matters!
+
+🎯 'sed -i 's/old/new/g' file.txt' edits file in-place. Add a backup: sed -i.bak
+
+💪 'awk '{sum+=$1} END {print sum}' numbers.txt' sums the first column. Awk is powerful!
+
+🎨 'tar czf archive.tar.gz folder/' creates compressed archives. 'tar xzf' to extract.
+
+⏱️ 'jobs' lists background jobs. 'fg %1' brings job #1 to foreground.
+
+🔍 'sort file.txt | uniq -c | sort -rn' counts and sorts duplicate lines. Great for log analysis!
+
+💡 'ln -s /full/path/to/file shortcut' creates a symbolic link. Like a Windows shortcut!
+
+🚀 'head -n 20 file.txt' shows first 20 lines. 'tail -n 20' shows last 20.
+
+⚡'printf "%s\n" * | grep pattern' searches filenames. Better than ls | grep for special chars.
+
+🔥 'fc' opens your last command in $EDITOR. Edit and save to run the corrected version!
+
+🎯 'basename /long/path/file.txt' returns just "file.txt". 'dirname' returns the path.
+
+💪 'wc -l file.txt' counts lines. Combine: find . -name "*.py" | xargs wc -l for total lines of code.
+
+🎨 'comm file1 file2' compares sorted files. Column 1: only in file1, Column 2: only in file2, Column 3: both.
+
+⏱️ 'yes | command' auto-answers 'yes' to all prompts. Dangerous but useful: yes | apt-get install
+
+🔍 'netstat -tuln' shows all listening ports. Great for checking what services are running.
+
+💡 'source ~/.bashrc' reloads your bash config without restarting the terminal.
+
+🚀 'Ctrl+R' then type, then Ctrl+R again cycles through matching commands in history.
+
+⚡ '${variable:-default}' uses default if variable is unset. ${name:-"guest"} is powerful in scripts.
+
+🔥 'trap "echo Exiting" EXIT' runs commands when script exits. Perfect for cleanup!
+
+🎯 'set -e' in scripts makes them exit on any error. 'set -x' shows each command as it runs.
+
+💪 'cd "$(dirname "$0")"' changes to the script's directory. Great for portable scripts.
+
+🎨 'tee -a file.log' appends to file instead of overwriting. Use in pipelines to log output.
+
+⏱️ 'timeout 5s command' kills command after 5 seconds if it doesn't finish.
+
+🔍 'lsof -i :8080' shows what's using port 8080. Find that mystery process!
+
+💡 'curl -s ipinfo.io' shows your public IP and location info. Add /ip for just the IP.
+
+🚀 'for i in {1..100}; do echo $i; done' creates numeric loops. Use {a..z} for letters!
+
+⚡'command 2>&1 | tee output.log' captures BOTH stdout and stderr to file and screen.
+
+🔥 'env -i command' runs command with empty environment. Great for testing clean execution.
+
+🎯 'readonly VAR=value' makes a variable unchangeable in scripts. Prevent accidental overwrites!
+
+💪 'stat file.txt' shows detailed file info: permissions, size, timestamps, inode. Everything!
+
+🎨 'paste file1 file2' merges files line-by-line side-by-side. Add -d',' for CSV creation.
+
+⏱️ 'pgrep -f process_name' finds process IDs by name. Use with 'kill': kill $(pgrep -f nginx)
+
+🔍 'strings binary_file' extracts readable text from binary files. Great for reverse engineering!
+
+💡 'exec > output.log 2>&1' redirects ALL script output to a file. Put at the top of scripts.
+
+🚀 'column -t file.txt' formats text into nice columns. Perfect for making tables readable!
+
+⚡ 'shuf -n 1 file.txt' picks a random line. 'shuf file.txt' randomizes all lines.
+
+🔥 'grep -oP "pattern" file' extracts only the matched text with Perl regex. Super powerful!
+
+🎯 'date +%Y%m%d_%H%M%S' creates sortable timestamps. Great for: backup_$(date +%Y%m%d).tar.gz
+
+💪 'parallel ::: cmd1 cmd2 cmd3' runs commands in parallel (install gnu-parallel). Massive speedup!
+
+🎨 '${var//search/replace}' replaces all occurrences in bash variable. No sed needed for simple cases!
+
+⏱️ 'strace -p PID' shows system calls of a running process. Debug anything!
+
+🔍 'tmux' lets you detach/reattach terminal sessions. Never lose work when SSH disconnects!
+
+💡 'Ctrl+X Ctrl+E' opens current command line in $EDITOR. Write complex commands comfortably!
+
+🚀 'rename 's/.txt/.md/' *.txt' batch renames files. Way easier than a loop!
+
+⚡ 'vim -d file1 file2' opens vimdiff to compare files side-by-side with highlighting.
+
+🔥 'grep -P '\t' file' finds tabs using Perl regex. -P enables powerful regex features.
+
+🎯 '<< EOF' here-documents let you write multi-line strings. Perfect for config file generation!
+
+💪 'git bisect' automates finding which commit broke something. Binary search through history!
+
+🎨 'jq' parses JSON in terminal. curl api.com | jq '.data[0].name' extracts specific fields.
+
+⏱️ 'perf top' shows live CPU usage by function. Find performance bottlenecks in real-time!
+
+🔍 'htop' is like 'top' but way better. Interactive, colorful, intuitive. Install it!
+
+💡 'screen -S name' creates named screen sessions. 'screen -r name' reattaches. Essential for servers!
+
+🚀 'bat' is 'cat' with syntax highlighting and git integration. Makes reading code beautiful!
+
+⚡ 'fd' is a modern 'find' replacement. Faster, simpler syntax, respects .gitignore by default.
+
+🔥 'ripgrep (rg)' is grep on steroids. 10x faster, better defaults, cleaner output.
+
+🎯 'exa' is a modern 'ls' with colors, git status, and tree view. Eye candy that's actually useful!
+
+💪 'fzf' adds fuzzy search to everything. Ctrl+R becomes supercharged command history search!
+
+🎨 'tldr command' shows practical examples instead of man pages. Quick learning tool!
+
+⏱️ 'ncdu' analyzes disk usage interactively. Navigate directories and delete space hogs visually.
+
+🔍 'glances' monitors system resources (CPU, RAM, network, disk) in one beautiful dashboard.
+
+💡 'z' learns your most-used directories and lets you jump with partial names. cd is obsolete!
+
+🚀 'autojump' is similar to 'z'. Type 'j proj' to jump to /home/user/projects instantly.
+
+⚡ 'thefuck' corrects your previous command. Made a typo? Type 'fuck' and it fixes it!
+
+🔥 'pipe-viewer (pv)' shows progress for pipes. cat bigfile | pv | gzip > compressed.gz
+
+🎯 'mosh' is better than ssh for unstable connections. Survives network changes and sleep!
