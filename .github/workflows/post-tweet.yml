@@ -43,7 +43,6 @@ jobs:
         git add bot_state.json
         git diff --quiet && git diff --staged --quiet || git commit -m "Update bot state [skip ci]"
         
-    - name: Pull and Push changes
+    - name: Push changes
       run: |
-        git pull --rebase origin master
-        git push origin master
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:master
