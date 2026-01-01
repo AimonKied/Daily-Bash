@@ -121,8 +121,14 @@ class BashTipBot:
             state['last_post_date'] = datetime.now().isoformat()
             self.save_state(state)
             
+        except tweepy.errors.Forbidden as e:
+            print(f"❌ Error posting tweet: 403 Forbidden")
+            print(f"Full error: {e}")
+            print(f"API response: {e.response.text if hasattr(e, 'response') else 'N/A'}")
+            raise
         except Exception as e:
             print(f"❌ Error posting tweet: {e}")
+            raise
     
     def run(self):
         """Main run method"""
