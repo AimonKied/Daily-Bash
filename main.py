@@ -15,6 +15,16 @@ load_dotenv()
 
 
 class BashTipBot:
+    # Hashtag pool for rotation (research shows 1-2 hashtags optimal for engagement)
+    HASHTAG_POOL = [
+        '#Linux',
+        '#Bash',
+        '#Terminal',
+        '#TechTwitter',
+        '#LinuxTips',
+        '#DevOps',
+    ]
+
     def __init__(self):
         # Load API credentials from environment variables
         self.api_key = os.getenv('X_API_KEY')
@@ -54,9 +64,14 @@ class BashTipBot:
         
         if not tips:
             raise ValueError(f"Tips file '{self.tips_file}' is empty!")
-        
+
         return tips
-    
+
+    def get_hashtags(self, count=2):
+        """Get random hashtags from the pool (1-2 recommended for optimal engagement)"""
+        num_hashtags = min(count, len(self.HASHTAG_POOL))
+        return random.sample(self.HASHTAG_POOL, num_hashtags)
+
     def load_state(self):
         """Load the bot's state from file"""
         if os.path.exists(self.state_file):
@@ -111,11 +126,16 @@ class BashTipBot:
         
         # Get the next tip in order
         tip = self.get_next_tip(state)
-        
+
+        # Add hashtags for better visibility (1-2 optimal for engagement)
+        hashtags = self.get_hashtags(2)
+        tweet_text = f"{tip}\n\n{' '.join(hashtags)}"
+
         # Post to X
         try:
-            response = self.client.create_tweet(text=tip)
+            response = self.client.create_tweet(text=tweet_text)
             print(f"✅ Successfully posted: {tip}")
+            print(f"   Hashtags: {' '.join(hashtags)}")
             print(f"Tweet ID: {response.data['id']}")
             
             # Update state
