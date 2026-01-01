@@ -27,13 +27,14 @@ class BashTipBot:
                     self.access_token_secret, self.bearer_token]):
             raise ValueError("Missing API credentials. Please set environment variables.")
         
-        # Initialize Tweepy client
+        # Initialize Tweepy client with wait_on_rate_limit
         self.client = tweepy.Client(
             bearer_token=self.bearer_token,
             consumer_key=self.api_key,
             consumer_secret=self.api_secret,
             access_token=self.access_token,
-            access_token_secret=self.access_token_secret
+            access_token_secret=self.access_token_secret,
+            wait_on_rate_limit=True
         )
         
         self.state_file = 'bot_state.json'
