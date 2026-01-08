@@ -88,15 +88,15 @@ class BashTipBot:
             json.dump(state, f, indent=2)
     
     def should_post(self, state):
-        """Check if it's time to post (every second day)"""
+        """Check if it's time to post (every ~2 days, with 40 hour buffer)"""
         if state['last_post_date'] is None:
             return True
-        
+
         last_post = datetime.fromisoformat(state['last_post_date'])
         now = datetime.now()
-        days_since_last_post = (now - last_post).days
-        
-        return days_since_last_post >= 2
+        hours_since_last_post = (now - last_post).total_seconds() / 3600
+
+        return hours_since_last_post >= 40
     
     def get_next_tip(self, state):
         """Get the next tip in order that hasn't been used"""
