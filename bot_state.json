@@ -1,5 +1,5 @@
 {
-  "last_post_date": "2026-01-14T12:04:34.731823",
+  "last_post_date": "2026-01-16T12:02:31.317148",
   "used_tips": [
     "\ud83d\udca1 Use 'man command' to read the manual for any command",
     "\ufffd Forgot sudo? Type 'sudo !!' to re-run your last command with sudo privileges. Game changer!",
@@ -10,6 +10,7 @@
     "\ud83d\udcaa 'mkdir -p dir1/dir2/dir3' creates nested directories in one shot. No need for multiple commands.",
     "\ud83c\udfa8 'ls -lth' shows files sorted by time (newest first). Add 'head' to see just the latest: ls -lth | head",
     "\u23f1\ufe0f Use 'time {command}' to see exactly how long any command takes. Great for optimization!",
-    "\ud83d\udd0d 'grep -r \"text\" .' searches ALL files in current directory recursively. Add '-i' for case-insensitive."
+    "\ud83d\udd0d 'grep -r \"text\" .' searches ALL files in current directory recursively. Add '-i' for case-insensitive.",
+    "\ud83d\udcca 'du -sh *' shows the size of each item in the current directory. Find those space hogs!"
   ]
 }
