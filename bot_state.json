@@ -1,5 +1,5 @@
 {
-  "last_post_date": "2026-01-16T12:02:31.317148",
+  "last_post_date": "2026-01-18T12:02:45.624544",
   "used_tips": [
     "\ud83d\udca1 Use 'man command' to read the manual for any command",
     "\ufffd Forgot sudo? Type 'sudo !!' to re-run your last command with sudo privileges. Game changer!",
@@ -11,6 +11,7 @@
     "\ud83c\udfa8 'ls -lth' shows files sorted by time (newest first). Add 'head' to see just the latest: ls -lth | head",
     "\u23f1\ufe0f Use 'time {command}' to see exactly how long any command takes. Great for optimization!",
     "\ud83d\udd0d 'grep -r \"text\" .' searches ALL files in current directory recursively. Add '-i' for case-insensitive.",
-    "\ud83d\udcca 'du -sh *' shows the size of each item in the current directory. Find those space hogs!"
+    "\ud83d\udcca 'du -sh *' shows the size of each item in the current directory. Find those space hogs!",
+    "\ud83c\udfaf 'find . -name \"*.log\" -mtime +30 -delete' finds and deletes log files older than 30 days."
   ]
 }
