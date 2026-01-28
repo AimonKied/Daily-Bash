@@ -1,5 +1,5 @@
 {
-  "last_post_date": "2026-01-26T12:02:44.842537",
+  "last_post_date": "2026-01-28T12:02:50.101097",
   "used_tips": [
     "\ud83d\udca1 Use 'man command' to read the manual for any command",
     "\ufffd Forgot sudo? Type 'sudo !!' to re-run your last command with sudo privileges. Game changer!",
@@ -16,6 +16,7 @@
     "\ud83d\ude80 'tail -f file.log' watches a file in real-time. Perfect for monitoring logs as they update.",
     "\ud83d\udca1 Create an alias: alias gs=\"git status\" in ~/.bashrc and never type the full command again.",
     "\u26a1 'history | awk '{print $2}' | sort | uniq -c | sort -rn | head' shows your most-used commands.",
-    "\ud83d\udd25 '!$' refers to the last argument of the previous command. Try: mkdir test && cd !$"
+    "\ud83d\udd25 '!$' refers to the last argument of the previous command. Try: mkdir test && cd !$",
+    "\ud83c\udfaf 'Ctrl+L' clears the screen (same as 'clear' but faster). Keep your terminal tidy!"
   ]
 }
