@@ -1,5 +1,5 @@
 {
-  "last_post_date": "2026-01-28T12:02:50.101097",
+  "last_post_date": "2026-01-30T12:02:45.179430",
   "used_tips": [
     "\ud83d\udca1 Use 'man command' to read the manual for any command",
     "\ufffd Forgot sudo? Type 'sudo !!' to re-run your last command with sudo privileges. Game changer!",
@@ -17,6 +17,7 @@
     "\ud83d\udca1 Create an alias: alias gs=\"git status\" in ~/.bashrc and never type the full command again.",
     "\u26a1 'history | awk '{print $2}' | sort | uniq -c | sort -rn | head' shows your most-used commands.",
     "\ud83d\udd25 '!$' refers to the last argument of the previous command. Try: mkdir test && cd !$",
-    "\ud83c\udfaf 'Ctrl+L' clears the screen (same as 'clear' but faster). Keep your terminal tidy!"
+    "\ud83c\udfaf 'Ctrl+L' clears the screen (same as 'clear' but faster). Keep your terminal tidy!",
+    "\ud83d\udcaa 'df -h' shows disk space in human-readable format. Know when you're running out of space."
   ]
 }
