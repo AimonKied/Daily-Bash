@@ -1,5 +1,5 @@
 {
-  "last_post_date": "2026-02-07T12:02:46.075173",
+  "last_post_date": "2026-02-09T12:02:30.732223",
   "used_tips": [
     "\ud83d\udca1 Use 'man command' to read the manual for any command",
     "\ufffd Forgot sudo? Type 'sudo !!' to re-run your last command with sudo privileges. Game changer!",
@@ -22,6 +22,7 @@
     "\ud83c\udfa8 'ps aux | grep process_name' finds running processes. Add '| grep -v grep' to exclude the grep itself.",
     "\u23f1\ufe0f Use '&' at the end to run commands in background: npm run build &",
     "\ud83d\udd0d 'which python' shows the full path of a command. Use 'type -a python' to see ALL versions.",
-    "\ud83d\udca1 'chmod +x script.sh' makes a file executable. Now you can run it with './script.sh'"
+    "\ud83d\udca1 'chmod +x script.sh' makes a file executable. Now you can run it with './script.sh'",
+    "\ud83d\ude80 'curl wttr.in' gives you the weather forecast in your terminal. Add your city: curl wttr.in/Berlin"
   ]
 }
