@@ -1,5 +1,5 @@
 {
-  "last_post_date": "2026-02-19T12:02:34.942806",
+  "last_post_date": "2026-02-21T12:02:34.375978",
   "used_tips": [
     "\ud83d\udca1 Use 'man command' to read the manual for any command",
     "\ufffd Forgot sudo? Type 'sudo !!' to re-run your last command with sudo privileges. Game changer!",
@@ -28,6 +28,7 @@
     "\ud83d\udd25 'xargs' is powerful: find . -name \"*.tmp\" | xargs rm removes all .tmp files found.",
     "\ud83c\udfaf 'rsync -av --progress source/ dest/' syncs directories with a progress bar. Better than cp!",
     "\ud83d\udcaa 'diff <(ls dir1) <(ls dir2)' compares directory contents using process substitution.",
-    "\ud83c\udfa8 'watch -n 1 \"command\"' runs a command every second. Great for monitoring changes."
+    "\ud83c\udfa8 'watch -n 1 \"command\"' runs a command every second. Great for monitoring changes.",
+    "\u23f1\ufe0f 'nohup command &' runs a process that survives logout. Output goes to nohup.out"
   ]
 }
