@@ -1,5 +1,5 @@
 {
-  "last_post_date": "2026-02-21T12:02:34.375978",
+  "last_post_date": "2026-02-23T12:02:34.162407",
   "used_tips": [
     "\ud83d\udca1 Use 'man command' to read the manual for any command",
     "\ufffd Forgot sudo? Type 'sudo !!' to re-run your last command with sudo privileges. Game changer!",
@@ -29,6 +29,7 @@
     "\ud83c\udfaf 'rsync -av --progress source/ dest/' syncs directories with a progress bar. Better than cp!",
     "\ud83d\udcaa 'diff <(ls dir1) <(ls dir2)' compares directory contents using process substitution.",
     "\ud83c\udfa8 'watch -n 1 \"command\"' runs a command every second. Great for monitoring changes.",
-    "\u23f1\ufe0f 'nohup command &' runs a process that survives logout. Output goes to nohup.out"
+    "\u23f1\ufe0f 'nohup command &' runs a process that survives logout. Output goes to nohup.out",
+    "\ud83d\udd0d '!!:s/old/new' replaces text in your last command. Faster than retyping everything!"
   ]
 }
