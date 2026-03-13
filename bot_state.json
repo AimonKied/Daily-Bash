@@ -1,5 +1,5 @@
 {
-  "last_post_date": "2026-03-11T12:02:31.166970",
+  "last_post_date": "2026-03-13T12:02:30.279935",
   "used_tips": [
     "\ud83d\udca1 Use 'man command' to read the manual for any command",
     "\ufffd Forgot sudo? Type 'sudo !!' to re-run your last command with sudo privileges. Game changer!",
@@ -36,6 +36,7 @@
     "\u26a1 'echo \"text\" | xclip -selection clipboard' copies text to clipboard (install xclip first).",
     "\ud83d\udd25 'grep -A 5 -B 5 \"pattern\" file' shows 5 lines before AND after each match. Context matters!",
     "\ud83c\udfaf 'sed -i 's/old/new/g' file.txt' edits file in-place. Add a backup: sed -i.bak",
-    "\ud83d\udcaa 'awk '{sum+=$1} END {print sum}' numbers.txt' sums the first column. Awk is powerful!"
+    "\ud83d\udcaa 'awk '{sum+=$1} END {print sum}' numbers.txt' sums the first column. Awk is powerful!",
+    "\ud83c\udfa8 'tar czf archive.tar.gz folder/' creates compressed archives. 'tar xzf' to extract."
   ]
 }
