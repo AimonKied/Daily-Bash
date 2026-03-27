@@ -1,5 +1,5 @@
 {
-  "last_post_date": "2026-03-25T12:02:23.641331",
+  "last_post_date": "2026-03-27T12:02:27.940428",
   "used_tips": [
     "\ud83d\udca1 Use 'man command' to read the manual for any command",
     "\ufffd Forgot sudo? Type 'sudo !!' to re-run your last command with sudo privileges. Game changer!",
@@ -43,6 +43,7 @@
     "\ud83d\udca1 'ln -s /full/path/to/file shortcut' creates a symbolic link. Like a Windows shortcut!",
     "\ud83d\ude80 'head -n 20 file.txt' shows first 20 lines. 'tail -n 20' shows last 20.",
     "\u26a1'printf \"%s\\n\" * | grep pattern' searches filenames. Better than ls | grep for special chars.",
-    "\ud83d\udd25 'fc' opens your last command in $EDITOR. Edit and save to run the corrected version!"
+    "\ud83d\udd25 'fc' opens your last command in $EDITOR. Edit and save to run the corrected version!",
+    "\ud83c\udfaf 'basename /long/path/file.txt' returns just \"file.txt\". 'dirname' returns the path."
   ]
 }
