@@ -1,5 +1,5 @@
 {
-  "last_post_date": "2026-04-04T12:02:32.899452",
+  "last_post_date": "2026-04-06T12:02:25.543450",
   "used_tips": [
     "\ud83d\udca1 Use 'man command' to read the manual for any command",
     "\ufffd Forgot sudo? Type 'sudo !!' to re-run your last command with sudo privileges. Game changer!",
@@ -48,6 +48,7 @@
     "\ud83d\udcaa 'wc -l file.txt' counts lines. Combine: find . -name \"*.py\" | xargs wc -l for total lines of code.",
     "\ud83c\udfa8 'comm file1 file2' compares sorted files. Column 1: only in file1, Column 2: only in file2, Column 3: both.",
     "\u23f1\ufe0f 'yes | command' auto-answers 'yes' to all prompts. Dangerous but useful: yes | apt-get install",
-    "\ud83d\udd0d 'netstat -tuln' shows all listening ports. Great for checking what services are running."
+    "\ud83d\udd0d 'netstat -tuln' shows all listening ports. Great for checking what services are running.",
+    "\ud83d\udca1 'source ~/.bashrc' reloads your bash config without restarting the terminal."
   ]
 }
